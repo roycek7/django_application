@@ -29,6 +29,9 @@ class VendorHelper(VerifyCompany):
             logger.info(f'Found {self.third_party_company} as user in db.')
 
     def do_action(self):
+        """
+        do action method is responsible for all the sequential steps required in the class
+        """
         super(VendorHelper, self).do_action()
 
         self.check_user()
@@ -40,9 +43,13 @@ class ThirdPartyUserVerifier(BaseAction):
     """
     def __init__(self, request):
         super(ThirdPartyUserVerifier, self).__init__()
+
         self.vendor_name = request.POST.get('third_party_company_name', None)
 
     def _produce_response(self):
+        """
+        this method is only responsible for calling helper class and sending success response
+        """
         vendor_verifier = VendorHelper(
             self.vendor_name
         )

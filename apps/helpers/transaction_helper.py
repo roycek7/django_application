@@ -76,6 +76,9 @@ class FindTransactionMetric(VerifyCompany):
             raise ActionException("Date Range is missing!", status.HTTP_400_BAD_REQUEST)
 
     def do_action(self):
+        """
+        do action method is responsible for all the sequential steps required in the class
+        """
         super(FindTransactionMetric, self).do_action()
 
         self.validate_datetime()
@@ -97,6 +100,9 @@ class CompanyRelationship(BaseAction):
         self.to_date = request.POST.get('to_date', None)
 
     def _produce_response(self):
+        """
+        this method is only responsible for calling helper class and sending success response
+        """
         vendor_verifier = FindTransactionMetric(
             self.first_company,
             self.second_company,
