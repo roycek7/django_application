@@ -34,15 +34,24 @@ class VerifyCompany(AbstractCompany):
         self.database = database
 
     def check_company(self):
+        """
+        validates if vendor company exist
+        """
         if not validate_company(self.third_party_company, list(set(self.database.vendor_name.to_list()))):
             logger.error(f'Given company {self.third_party_company} does not exist in vendor list.')
             raise ActionException(f'{self.third_party_company} Vendor Does Not Exist!', status.HTTP_404_NOT_FOUND)
 
     def validate_params(self):
+        """
+        validates if vendor company parameter is given
+        """
         if not self.third_party_company:
             logger.error(f'Given vendor company {self.third_party_company} cannot be empty.')
             raise ActionException("Vendor Name is required!", status.HTTP_400_BAD_REQUEST)
 
     def do_action(self):
+        """
+        base do action steps
+        """
         self.validate_params()
         self.check_company()
