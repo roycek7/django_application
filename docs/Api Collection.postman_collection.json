@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "69e59fed-d473-4a33-9f82-62040e6f85c0",
-		"name": "OnlinePajak",
+		"name": "Api Collection",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [

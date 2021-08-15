@@ -8,7 +8,7 @@ Run `python manage.py runserver 8080` to start application.
 
 To run testcases `python manage.py test`.
 
-Import postman collection from `docs/OnlinePajak.postman_collection.json` and run through the POSTMAN application.
+Import postman collection from `docs/Api Collection.postman_collection.json` and run through the POSTMAN application.
 
 Endpoint 1: `localhost:8080/verify/`, form-data:
 | key | third_party_company_name | mandatory |
