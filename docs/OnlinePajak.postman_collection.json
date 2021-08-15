@@ -1,0 +1,82 @@
+{
+	"info": {
+		"_postman_id": "69e59fed-d473-4a33-9f82-62040e6f85c0",
+		"name": "OnlinePajak",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:8080/transaction/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "company_name",
+							"value": "Perum Prasetya Permadi",
+							"type": "text"
+						},
+						{
+							"key": "company_vendor",
+							"value": "PT Putra",
+							"type": "text"
+						},
+						{
+							"key": "from_date",
+							"value": "2020-04-05 08:42:35",
+							"type": "text"
+						},
+						{
+							"key": "to_date",
+							"value": "2020-05-06 14:03:08",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8080/transaction/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"transaction",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/verify/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "third_party_company_name",
+							"value": "UD Saragih Tbk",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8080/verify/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"verify",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
