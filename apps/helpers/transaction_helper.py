@@ -87,12 +87,12 @@ class FindTransactionMetric(VerifyCompany):
         return self
 
 
-class CompanyRelationship(BaseAction):
+class CommercialCompanyRelationship(BaseAction):
     """
     This class is responsible for calling the main action class and sending success response
     """
     def __init__(self, request):
-        super(CompanyRelationship, self).__init__()
+        super(CommercialCompanyRelationship, self).__init__()
 
         self.first_company = request.POST.get('company_name', None)
         self.second_company = request.POST.get('company_vendor', None)

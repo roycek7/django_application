@@ -3,10 +3,10 @@ from rest_framework.decorators import permission_classes
 from rest_framework.views import APIView
 
 from .helpers.company_helper import ThirdPartyUserVerifier
-from .helpers.transaction_helper import CompanyRelationship
+from .helpers.transaction_helper import CommercialCompanyRelationship
 
 
-class VerifyCompany(APIView):
+class VendorUserChecker(APIView):
 
     @permission_classes((permissions.AllowAny,))
     def post(self, request):
@@ -14,9 +14,9 @@ class VerifyCompany(APIView):
         return action.do_action()
 
 
-class TransactionsCompany(APIView):
+class TransactionsBetweenCompanies(APIView):
 
     @permission_classes((permissions.AllowAny,))
     def post(self, request):
-        action = CompanyRelationship(request)
+        action = CommercialCompanyRelationship(request)
         return action.do_action()
